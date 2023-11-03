@@ -139,7 +139,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            <Separator className="fixed w-full mt-16 md:mt-20" />
+            <Separator className="fixed w-full mt-16 md:mt-20 z-50" />
         </>
     );
 };

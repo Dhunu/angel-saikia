@@ -1,5 +1,17 @@
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
+import {
+    AlertDialog,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "./ui/alert-dialog";
 import { Button } from "./ui/button";
 import Resume from "/assets/files/Angel_Saikia.pdf";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
     const handleDownloadCV = () => {
@@ -30,20 +42,53 @@ const HeroSection = () => {
                         Full Stack Web Developer
                     </h1>
                     <div className="flex flex-wrap gap-x-5 justify-center">
-                        <Button
-                            variant="default"
-                            className="bg-[#EF7C4A] text-white hover:bg-[#ff7337] hover:scale-110 transition-all w-24 mt-5"
-                            onClick={() => {
-                                window.location.href = "#contact";
-                            }}
-                        >
-                            Hire Me
-                        </Button>
+                        <AlertDialog>
+                            <AlertDialogTrigger>
+                                <Button
+                                    variant="default"
+                                    className="bg-[#EF7C4A] text-white hover:bg-[#ff7337] hover:scale-110 transition-all w-24 mt-5"
+                                >
+                                    Hire Me
+                                </Button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent className="bg-black border-0">
+                                <AlertDialogHeader>
+                                    <AlertDialogTitle className="text-white">
+                                        You can contact me at
+                                    </AlertDialogTitle>
+                                    <AlertDialogDescription className="flex flex-col">
+                                        <div className="flex gap-5">
+                                            <a href="/">
+                                                <LinkedinIcon color="#fff"/>
+                                            </a>
+                                            <a href="/">
+                                                <FacebookIcon color="#fff"/>
+                                            </a>
+                                            <a href="/">
+                                                <InstagramIcon color="#fff"/>
+                                            </a>
+                                            <a href="/">
+                                                <LinkedinIcon color="#fff"/>
+                                            </a>
+                                        </div>
+                                        <h2 className="mt-3 text-xl text-white">
+                                            +91-8011158661
+                                        </h2>
+                                        <Link to="mailto:angelsaikia333@gmail.com" className="mt-2 text-xl text-white">
+                                            angelsaikia333@gmail.com
+                                        </Link>
+                                    </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                    <AlertDialogCancel className="bg-[#EF7C4A] border-0 text-white">Close</AlertDialogCancel>
+                                </AlertDialogFooter>
+                            </AlertDialogContent>
+                        </AlertDialog>
                         <Button
                             variant="outline"
                             className="bg-black text-white hover:scale-110 transition-all w-32 mt-5"
                             onClick={() => {
-                                handleDownloadCV()
+                                handleDownloadCV();
                             }}
                         >
                             Download CV
