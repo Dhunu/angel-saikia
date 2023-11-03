@@ -84,12 +84,12 @@ const Navbar = () => {
                                     <List />
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56 bg-white">
+                            <DropdownMenuContent className="w-56 bg-black">
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="bg-black text-white">
                                         <HashLink
                                             to="#about"
-                                            className="flex h-10"
+                                            className="flex h-10 items-center w-full"
                                         >
                                             <User className="mr-2 h-6 w-6" />
                                             <span className="text-lg ml-2">
@@ -97,10 +97,10 @@ const Navbar = () => {
                                             </span>
                                         </HashLink>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="bg-black text-white">
                                         <HashLink
                                             to="#projects"
-                                            className="flex h-10"
+                                            className="flex h-10 items-center w-full"
                                         >
                                             <FileCode2 className="mr-2 h-6 w-6" />
                                             <span className="text-lg ml-2">
@@ -108,10 +108,10 @@ const Navbar = () => {
                                             </span>
                                         </HashLink>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="bg-black text-white">
                                         <HashLink
-                                            to="#contact"
-                                            className="flex h-10"
+                                            to="#contact" 
+                                            className="flex h-10 items-center w-full"
                                         >
                                             <Contact className="mr-2 h-6 w-6" />
                                             <span className="text-lg ml-2">
@@ -119,7 +119,7 @@ const Navbar = () => {
                                             </span>
                                         </HashLink>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem className="flex justify-center">
+                                    <DropdownMenuItem className="flex justify-center bg-black text-white">
                                         <Button
                                             variant="outline"
                                             className="bg-[#EF7C4A] hover:bg-[#ff6f00] hover:text-white hover:scale-95 self-center flex sm:hidden  text-white"
