@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 import { Separator } from "../ui/separator";
@@ -8,7 +7,6 @@ import {
     DropdownMenu,
     DropdownMenuTrigger,
     DropdownMenuContent,
-    DropdownMenuGroup,
     DropdownMenuItem,
 } from "../ui/dropdown-menu";
 import { List, User, FileCode2, Contact } from "lucide-react";
@@ -25,17 +23,17 @@ const Navbar = () => {
     return (
         <>
             <nav className="fixed flex justify-between top-0 w-full bg-black h-16 md:h-20 px-10 md:px-16 text-white z-50">
-                <Link to="/" className="h-full hover:underline">
+                <HashLink to="/#hero" className="h-full hover:underline">
                     <img
                         src="/assets/images/logo.png"
                         alt="logo"
                         className="object-contain h-full"
                     />
-                </Link>
+                </HashLink>
                 <ul className="hidden lg:flex justify-evenly gap-x-4 items-center h-full w-1/2 xl:w-1/4">
                     <li>
                         <HashLink
-                            to="#about"
+                            to="/#about"
                             className="flex font-bold text-2xl link-underline link-underline-black p-1 hover:rounded-lg"
                         >
                             <User className="flex self-center h-6 w-6 text-white mr-2" />
@@ -44,7 +42,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <HashLink
-                            to="#projects"
+                            to="/#projects"
                             className="flex font-bold text-2xl link-underline link-underline-black p-1 hover:rounded-lg"
                         >
                             <FileCode2 className="flex self-center h-6 w-6 text-white mr-2" />
@@ -53,7 +51,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <HashLink
-                            to="#contact"
+                            to="/#contact"
                             className="flex font-bold text-2xl link-underline link-underline-black p-1 hover:rounded-lg"
                         >
                             <Contact className="flex self-center h-6 w-6 text-white mr-2" />
@@ -85,55 +83,53 @@ const Navbar = () => {
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56 bg-black">
-                                <DropdownMenuGroup>
-                                    <DropdownMenuItem className="bg-black text-white">
-                                        <HashLink
-                                            to="#about"
-                                            className="flex h-10 items-center w-full"
-                                        >
-                                            <User className="mr-2 h-6 w-6" />
-                                            <span className="text-lg ml-2">
-                                                About
-                                            </span>
-                                        </HashLink>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem className="bg-black text-white">
-                                        <HashLink
-                                            to="#projects"
-                                            className="flex h-10 items-center w-full"
-                                        >
-                                            <FileCode2 className="mr-2 h-6 w-6" />
-                                            <span className="text-lg ml-2">
-                                                Projects
-                                            </span>
-                                        </HashLink>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem className="bg-black text-white">
-                                        <HashLink
-                                            to="#contact" 
-                                            className="flex h-10 items-center w-full"
-                                        >
-                                            <Contact className="mr-2 h-6 w-6" />
-                                            <span className="text-lg ml-2">
-                                                Contact
-                                            </span>
-                                        </HashLink>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem className="flex justify-center bg-black text-white">
-                                        <Button
-                                            variant="outline"
-                                            className="bg-[#EF7C4A] hover:bg-[#ff6f00] hover:text-white hover:scale-95 self-center flex sm:hidden  text-white"
-                                            onClick={() => {
-                                                window.open(
-                                                    "https://drive.google.com/file/d/1Ojl6wrmw1r6b4TdnCeq0ZvttJoy2VrhG/view?usp=sharing"
-                                                );
-                                                handleHireMe();
-                                            }}
-                                        >
-                                            Hire ME
-                                        </Button>
-                                    </DropdownMenuItem>
-                                </DropdownMenuGroup>
+                                <DropdownMenuItem className="bg-black text-white">
+                                    <HashLink
+                                        to="/#about"
+                                        className="flex h-10 items-center w-full"
+                                    >
+                                        <User className="mr-2 h-6 w-6" />
+                                        <span className="text-lg ml-2">
+                                            About
+                                        </span>
+                                    </HashLink>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="bg-black text-white">
+                                    <HashLink
+                                        to="/#projects"
+                                        className="flex h-10 items-center w-full"
+                                    >
+                                        <FileCode2 className="mr-2 h-6 w-6" />
+                                        <span className="text-lg ml-2">
+                                            Projects
+                                        </span>
+                                    </HashLink>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="bg-black text-white">
+                                    <HashLink
+                                        to="/#contact"
+                                        className="flex h-10 items-center w-full"
+                                    >
+                                        <Contact className="mr-2 h-6 w-6" />
+                                        <span className="text-lg ml-2">
+                                            Contact
+                                        </span>
+                                    </HashLink>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="flex justify-center bg-black text-white hover:bg-black">
+                                    <Button
+                                        variant="outline"
+                                        className="bg-[#EF7C4A] hover:bg-[#ff6f00] hover:text-white hover:scale-95 self-center flex sm:hidden  text-white"
+                                        onClick={() => {
+                                            window.open(
+                                                "https://drive.google.com/file/d/1Ojl6wrmw1r6b4TdnCeq0ZvttJoy2VrhG/view?usp=sharing"
+                                            );
+                                            handleHireMe();
+                                        }}
+                                    >
+                                        Hire ME
+                                    </Button>
+                                </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>

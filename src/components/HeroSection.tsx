@@ -21,7 +21,7 @@ const HeroSection = () => {
         link.click();
     };
     return (
-        <section className="mt-10 xl:h-screen flex flex-col items-center justify-center">
+        <section className="pt-16 md:pt-20 xl:h-screen flex flex-col items-center justify-center" id="hero">
             <div className="flex justify-between flex-wrap-reverse">
                 <div className="w-min-[500px] w-full xl:w-auto flex justify-center">
                     <img

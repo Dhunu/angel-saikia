@@ -1,8 +1,4 @@
-import {
-    projectsBackEnd,
-    projectsFrontEnd,
-    projectsFullStack,
-} from "@/constants";
+import { projectScope, projects } from "@/constants";
 import Container from "./ui/container";
 import ProjectCard from "./ui/project-card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
@@ -26,54 +22,36 @@ const ProjectSection = () => {
                     value="all"
                     className="flex flex-wrap gap-2 justify-evenly"
                 >
-                    {projectsFullStack.map(() => (
-                        <ProjectCard
-                            projectName="BrightLine - Clone"
-                            projectImage="https://dhunu.github.io/resources/brightline.png"
-                            projectLink="https://peppy-valkyrie-ddd5ab.netlify.app/index.html"
-                            projectGithub="https://github.com/Roshan-Patro/fallacious-company-8720"
-                            projectTags={["html", "css", "js", "bootstrap"]}
-                        />
-                    ))}
-                    {projectsFrontEnd.map((project) => (
-                        <ProjectCard
-                            projectName={project.title}
-                            projectImage={project.image}
-                            projectLink={project.url}
-                            projectGithub={project.github}
-                            projectTags={project.techStack}
-                        />
-                    ))}
-                    {projectsBackEnd.map((project) => (
-                        <ProjectCard
-                            projectName={project.title}
-                            projectImage={project.image}
-                            projectLink={project.url}
-                            projectGithub={project.github}
-                            projectTags={project.techStack}
-                        />
+                    {projects.map((project) => (
+                         <ProjectCard
+                         projectName={project.title}
+                         projectImage={project.image}
+                         projectLink={project.url}
+                         projectGithub={project.github}
+                         projectTags={project.techStack}
+                     />
                     ))}
                 </TabsContent>
 
-                <TabsContent
+                {/* <TabsContent
                     value="fs"
                     className="flex flex-wrap gap-2 justify-evenly"
                 >
-                    {projectsFullStack.map(() => (
-                        <ProjectCard
-                            projectName="BrightLine - Clone"
-                            projectImage="https://dhunu.github.io/resources/brightline.png"
-                            projectLink="https://peppy-valkyrie-ddd5ab.netlify.app/index.html"
-                            projectGithub="https://github.com/Roshan-Patro/fallacious-company-8720"
-                            projectTags={["html", "css", "js", "bootstrap"]}
-                        />
+                    {projects.filter(project => project.scope==projectScope.FullStack).map((project) => (
+                         <ProjectCard
+                         projectName={project.title}
+                         projectImage={project.image}
+                         projectLink={project.url}
+                         projectGithub={project.github}
+                         projectTags={project.techStack}
+                     />
                     ))}
-                </TabsContent>
+                </TabsContent> */}
                 <TabsContent
                     value="be"
                     className="flex flex-wrap gap-2 justify-evenly"
                 >
-                    {projectsBackEnd.map((project) => (
+                    {projects.filter(project => project.scope===projectScope.BackEnd).map((project) => (
                         <ProjectCard
                             projectName={project.title}
                             projectImage={project.image}
@@ -87,7 +65,7 @@ const ProjectSection = () => {
                     value="fe"
                     className="flex flex-wrap gap-2 justify-evenly"
                 >
-                    {projectsFrontEnd.map((project) => (
+                    {projects.filter(project => project.scope===projectScope.FrontEnd).map((project) => (
                         <ProjectCard
                             projectName={project.title}
                             projectImage={project.image}

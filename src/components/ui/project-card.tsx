@@ -4,7 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { Code2, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
     className?: string;
@@ -24,6 +24,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     projectGithub,
 }) => {
     const [isMounted, setIsMounted] = useState(false);
+    const navigate = useNavigate();
+    const handleProjectClick = () => {
+        navigate(`/projects/${projectName.toLowerCase().replace(/\s/g, "-")}`);
+    }
 
     useEffect(() => {
         setIsMounted(true);
@@ -32,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     if (!isMounted) return null;
 
     return (
-        <div className={cn("h-64 w-96 rounded-lg", className)}>
+        <div className={cn("h-64 w-96 rounded-lg hover:cursor-pointer", className)} onClick={handleProjectClick}>
             <Tilt
                 className="parallax-effect-glare-scale h-full w-full border border-white rounded-xl"
                 perspective={500}
@@ -54,16 +58,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             </span>
                         ))}
                     </div>
-                    <Link to={projectLink} onClick={() => {
-                        window.open(projectLink, "_blank");
-                    }}>
-                        <Code2
-                            className="absolute top-6 right-16"
-                        />
+                    <Link
+                        to={projectLink}
+                        onClick={() => {
+                            window.open(projectLink, "_blank");
+                        }}
+                    >
+                        <Code2 className="absolute top-6 right-16" />
                     </Link>
-                    <Link to={projectGithub} onClick={() => {
-                        window.open(projectGithub, "_blank");
-                    }}>
+                    <Link
+                        to={projectGithub}
+                        onClick={() => {
+                            window.open(projectGithub, "_blank");
+                        }}
+                    >
                         <Github className="absolute top-6 right-7" />
                     </Link>
                 </div>

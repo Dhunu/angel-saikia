@@ -5,7 +5,7 @@ import ProjectSection from "@/components/ProjectSection";
 
 const HomePage = () => {
     return (
-        <div className="h-full pt-16 md:pt-20 bg-black">
+        <div className="h-full bg-black">
             <HeroSection />
             <AboutMeSection />
             <ProjectSection />
