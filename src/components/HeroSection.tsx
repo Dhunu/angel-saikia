@@ -1,17 +1,15 @@
-import { FacebookIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
 import {
-    AlertDialog,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-} from "./ui/alert-dialog";
+    FacebookIcon,
+    GithubIcon,
+    InstagramIcon,
+    LinkedinIcon,
+} from "lucide-react";
+import { SocialIcon } from "react-social-icons";
+
 import { Button } from "./ui/button";
 import Resume from "/assets/files/Angel_Saikia.pdf";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 const HeroSection = () => {
     const handleDownloadCV = () => {
@@ -42,48 +40,75 @@ const HeroSection = () => {
                         Full Stack Web Developer
                     </h1>
                     <div className="flex flex-wrap gap-x-5 justify-center">
-                        <AlertDialog>
-                            <AlertDialogTrigger>
+                        <Dialog>
+                            <DialogTrigger>
                                 <Button
                                     variant="default"
                                     className="bg-[#EF7C4A] text-white hover:bg-[#ff7337] hover:scale-110 transition-all w-24 mt-5"
                                 >
                                     Hire Me
                                 </Button>
-                            </AlertDialogTrigger>
-                            <AlertDialogContent className="bg-black border-0">
-                                <AlertDialogHeader>
-                                    <AlertDialogTitle className="text-white">
+                            </DialogTrigger>
+                            <DialogContent className="bg-black border-0 w-80 sm:w-96 text-white">
+                                <DialogHeader>
+                                    <DialogTitle className="text-white">
                                         You can contact me at
-                                    </AlertDialogTitle>
-                                    <AlertDialogDescription className="flex flex-col">
-                                        <div className="flex gap-5">
-                                            <a href="/">
-                                                <LinkedinIcon color="#fff"/>
+                                    </DialogTitle>
+                                    <DialogDescription className="flex flex-col">
+                                        <div className="flex gap-5 h-10 items-center justify-center sm:justify-start">
+                                            <a
+                                                href="https://www.linkedin.com/in/angel-saikia/"
+                                                target="_blank"
+                                            >
+                                                <LinkedinIcon color="#0072b1" />
                                             </a>
-                                            <a href="/">
-                                                <FacebookIcon color="#fff"/>
+                                            <a
+                                                href="https://www.facebook.com/angel.saikia.140/"
+                                                target="_blank"
+                                            >
+                                                <FacebookIcon color="#1877F2" />
                                             </a>
-                                            <a href="/">
-                                                <InstagramIcon color="#fff"/>
+                                            <a
+                                                href="https://twitter.com/AngelSaikia1"
+                                                target="_blank"
+                                                className="h-full"
+                                            >
+                                                <SocialIcon
+                                                    network="x"
+                                                    url=""
+                                                    style={{
+                                                        height: "40px",
+                                                        width: "40px",
+                                                    }}
+                                                />
                                             </a>
-                                            <a href="/">
-                                                <LinkedinIcon color="#fff"/>
+                                            <a
+                                                href="https://www.instagram.com/saikiaangel_/"
+                                                target="_blank"
+                                            >
+                                                <InstagramIcon color="#d62976" />
                                             </a>
+                                            <a
+                                                href="https://github.com/Dhunu"
+                                                target="_blank"
+                                            >
+                                                <GithubIcon color="#fff" />
+                                            </a>
+                                            
                                         </div>
                                         <h2 className="mt-3 text-xl text-white">
                                             +91-8011158661
                                         </h2>
-                                        <Link to="mailto:angelsaikia333@gmail.com" className="mt-2 text-xl text-white">
+                                        <Link
+                                            to="mailto:angelsaikia333@gmail.com"
+                                            className="mt-2 text-xl text-white"
+                                        >
                                             angelsaikia333@gmail.com
                                         </Link>
-                                    </AlertDialogDescription>
-                                </AlertDialogHeader>
-                                <AlertDialogFooter>
-                                    <AlertDialogCancel className="bg-[#EF7C4A] border-0 text-white">Close</AlertDialogCancel>
-                                </AlertDialogFooter>
-                            </AlertDialogContent>
-                        </AlertDialog>
+                                    </DialogDescription>
+                                </DialogHeader>
+                            </DialogContent>
+                        </Dialog>
                         <Button
                             variant="outline"
                             className="bg-black text-white hover:scale-110 transition-all w-32 mt-5"
