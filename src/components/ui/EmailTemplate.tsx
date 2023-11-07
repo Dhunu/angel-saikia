@@ -77,6 +77,7 @@ const EmailTemplate = () => {
                     value={form.name}
                     className="h-10 rounded-lg p-5 text-black"
                     onChange={handleChange}
+                    required
                 />
                 <label className="font-semibold text-xl my-2">Email</label>
                 <input
@@ -85,6 +86,7 @@ const EmailTemplate = () => {
                     value={form.email}
                     className="h-10 rounded-lg p-5 text-black"
                     onChange={handleChange}
+                    required
                 />
                 <label className="font-semibold text-xl my-2">Message</label>
                 <textarea
@@ -92,6 +94,7 @@ const EmailTemplate = () => {
                     value={form.message}
                     className="rounded-lg p-5 text-black"
                     onChange={handleChange}
+                    required
                 />
                 <Button
                     variant="outline"
