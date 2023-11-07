@@ -22,7 +22,7 @@ const Navbar = () => {
     };
     return (
         <>
-            <nav className="fixed flex justify-between top-0 w-full bg-black h-16 md:h-20 px-10 md:px-16 text-white z-50">
+            <nav className="fixed flex justify-between top-0 w-full bg-black h-16 md:h-20 px-2 xl:px-16 text-white z-50">
                 <HashLink to="/#hero" className="h-full hover:underline">
                     <img
                         src="/assets/images/logo.png"

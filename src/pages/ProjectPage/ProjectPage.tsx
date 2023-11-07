@@ -55,7 +55,7 @@ const ProjectPage = () => {
                 <p className="text-slate-300">{project?.description}</p>
                 <Separator className="my-5" />
                 <h2 className="text-xl lg:text-3xl">Tech Stack</h2>
-                <p className="w-1/2 flex">
+                <p className="w-full flex flex-wrap gap-2 mt-2">
                     {project?.allTechStack.map((stack) => (
                         <span className="bg-slate-300 text-slate-900 px-2 py-1 rounded-md mr-2">
                             {stack}
