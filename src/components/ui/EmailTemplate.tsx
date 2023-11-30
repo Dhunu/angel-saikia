@@ -65,8 +65,6 @@ const EmailTemplate = () => {
     };
     return (
         <div className="flex flex-col w-full">
-            <h1 className="font-semibold text-2xl my-5">Contact Me</h1>
-
             <div className="flex flex-col justify-center my-10 gap-5">
                 <div className="flex justify-start items-center gap-5">
                     <PhoneCallIcon />

@@ -16,7 +16,7 @@ const ProjectPage = () => {
         <Container className="h-full flex flex-col mx-2 lg:mx-auto">
             <div className="pt-24"></div>
             <div className="flex justify-between items-center">
-                <h1 className="text-xl lg:text-5xl underline flex justify-between items-center gap-5">
+                <h1 className="text-xl lg:text-5xl flex justify-between items-center gap-5">
                     {project?.title}
                 </h1>
                 <div className="flex items-center justify-between w-20">
@@ -31,13 +31,7 @@ const ProjectPage = () => {
             <div className="w-full">
                 {project?.scope === projectScope.FrontEnd ||
                 projectScope.FullStack ? (
-                    <embed
-                        type="text/html"
-                        src={project?.url}
-                        height={600}
-                        width="100%"
-                        className="mt-10"
-                    />
+                    <img src={project?.image} className="my-10 border rounded-lg"/>
                 ) : (
                     <div className="my-10 w-full h-60 md:h-[600px]">
                         <ReactPlayer

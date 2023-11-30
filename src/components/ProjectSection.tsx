@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 const ProjectSection = () => {
     return (
         <Container className="pt-20 mx-10 md:mx-auto" id="projects">
-            <h1 className="text-center font-extrabold text-3xl md:text-5xl underline">
+            <h1 className="text-center font-extrabold text-3xl md:text-5xl font-serif">
                 My Projects
             </h1>
             <Tabs defaultValue="all" className="mt-10">

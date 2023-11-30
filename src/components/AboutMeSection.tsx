@@ -15,7 +15,7 @@ const AboutMeSection = () => {
                 />
             </div>
             <div className="flex w-full xl:w-[500px] px-5 xl:px-0 justify-center items-center xl:items-start flex-col pt-10 xl:pr-16 mb-10">
-                <h1 className="font-extrabold text-3xl sm:text-5xl underline mb-10">
+                <h1 className="font-extrabold text-3xl sm:text-5xl mb-10 font-serif">
                     About Me
                 </h1>
                 <p className="text-white text-xl font-serif">
