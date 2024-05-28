@@ -11,7 +11,7 @@ const AboutMeSection = () => {
                     width={700}
                     height={700}
                     alt="about-image"
-                    className="object-contain rounded-3xl transform -scale-x-100 hover:-scale-x-105 duration-300 transition-transform"
+                    className="object-contain rounded-3xl -scale-x-100 hover:-scale-x-105 duration-300 transition-transform"
                 />
             </div>
             <div className="flex w-full xl:w-[500px] px-5 xl:px-0 justify-center items-center xl:items-start flex-col pt-10 xl:pr-16 mb-10">
