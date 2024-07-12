@@ -9,57 +9,22 @@ const ProjectSection = () => {
             <h1 className="md:text-5xl font-serif text-3xl font-extrabold text-center">
                 My Projects
             </h1>
-            <Tabs defaultValue="all" className="mt-10">
+            <Tabs defaultValue="fea" className="mt-10">
                 <div className="flex justify-center mb-10">
                     <TabsList>
-                        <TabsTrigger value="all">All</TabsTrigger>
+                        <TabsTrigger value="fea">Featured</TabsTrigger>
+                        <TabsTrigger value="fs">FullStack</TabsTrigger>
                         <TabsTrigger value="fe">Frontend</TabsTrigger>
                         <TabsTrigger value="be">Backend</TabsTrigger>
                     </TabsList>
                 </div>
                 <TabsContent
-                    value="all"
-                    className="justify-evenly flex flex-wrap gap-2"
+                    value="fea"
+                    className="flex flex-wrap justify-center gap-10"
                 >
                     {projects
-                        .sort((a, b) => b.id - a.id)
-                        .filter(
-                            (project) =>
-                                project.scope === projectScope.FullStack
-                        )
-
-                        .map((project) => (
-                            <ProjectCard
-                                key={project.title}
-                                projectName={project.title}
-                                projectImage={project.image}
-                                projectLink={project.url}
-                                projectGithub={project.github}
-                                projectTags={project.techStack}
-                            />
-                        ))}
-                    {projects
-                        .sort((a, b) => b.id - a.id)
-                        .filter(
-                            (project) => project.scope === projectScope.FrontEnd
-                        )
-
-                        .map((project) => (
-                            <ProjectCard
-                                key={project.title}
-                                projectName={project.title}
-                                projectImage={project.image}
-                                projectLink={project.url}
-                                projectGithub={project.github}
-                                projectTags={project.techStack}
-                            />
-                        ))}
-                    {projects
-                        .sort((a, b) => b.id - a.id)
-                        .filter(
-                            (project) => project.scope === projectScope.BackEnd
-                        )
-
+                        .sort((a, b) => a.id - b.id)
+                        .filter((project) => project.featured)
                         .map((project) => (
                             <ProjectCard
                                 key={project.title}
@@ -71,10 +36,30 @@ const ProjectSection = () => {
                             />
                         ))}
                 </TabsContent>
-
+                <TabsContent
+                    value="fs"
+                    className="flex flex-wrap justify-center gap-10"
+                >
+                    {projects
+                        .sort((a, b) => a.id - b.id)
+                        .filter(
+                            (project) =>
+                                project.scope === projectScope.FullStack
+                        )
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
+                </TabsContent>
                 <TabsContent
                     value="be"
-                    className="justify-evenly flex flex-wrap gap-2"
+                    className="flex flex-wrap justify-center gap-10"
                 >
                     {projects
                         .filter(
@@ -93,7 +78,7 @@ const ProjectSection = () => {
                 </TabsContent>
                 <TabsContent
                     value="fe"
-                    className="justify-evenly flex flex-wrap gap-2"
+                    className="flex flex-wrap justify-center gap-10"
                 >
                     {projects
                         .filter(

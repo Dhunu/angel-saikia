@@ -99,6 +99,7 @@ export const projects = [
         github: "https://github.com/Dhunu/Covid_Vacination",
     },
     {
+        featured: true,
         scope: projectScope.FullStack,
         id: 6,
         title: "Safar Sathi",
@@ -110,5 +111,26 @@ export const projects = [
         image: "/assets/images/safar-sathi.png",
         url: "https://safar-sathi.vercel.app/",
         github: "https://github.com/Dhunu/safar-sathi",
+    },
+    {
+        featured: true,
+        scope: projectScope.FullStack,
+        id: 7,
+        title: "Blogify",
+        description:
+            "This is a blog website where users can create, read, update and delete blogs. It is made using NextJS, TailwindCSS, Clerk Auth, MongoDB, Prisma and Vercel.",
+        type: projectType.Individual,
+        techStack: ["NextJS", "Clerk", "MongoDB"],
+        allTechStack: [
+            "NextJS",
+            "TailwindCSS",
+            "Clerk",
+            "MongoDB",
+            "Prisma",
+            "Vercel",
+        ],
+        image: "/assets/images/blogify.png",
+        url: "https://blogify.angelsaikia.com",
+        github: "https://github.com/Dhunu/blogify",
     },
 ];
