@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     const navigate = useNavigate();
     const handleProjectClick = () => {
         navigate(`/projects/${projectName.toLowerCase().replace(/\s/g, "-")}`);
-    }
+    };
 
     useEffect(() => {
         setIsMounted(true);
@@ -36,9 +36,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     if (!isMounted) return null;
 
     return (
-        <div className={cn("h-64 w-96 rounded-lg hover:cursor-pointer", className)} onClick={handleProjectClick}>
+        <div
+            className={cn(
+                "h-64 w-96 rounded-lg hover:cursor-pointer",
+                className
+            )}
+            onClick={handleProjectClick}
+        >
             <Tilt
-                className="parallax-effect-glare-scale h-full w-full border border-white rounded-xl"
+                className="parallax-effect-glare-scale rounded-xl w-full h-full border border-white"
                 perspective={500}
                 glareEnable={true}
                 glareMaxOpacity={0.45}
@@ -47,9 +53,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <img
                     src={projectImage}
                     alt="project-img"
-                    className="object-contain opacity-50 rounded-t-xl"
+                    className="rounded-xl object-cover opacity-50"
                 />
-                <div className="inner-element w-full h-full absolute top-0 left-0">
+                <div className="inner-element absolute top-0 left-0 w-full h-full">
                     <h3 className="text-xl">{projectName}</h3>
                     <div className="text-sm">
                         {projectTags.map((tag, index) => (
@@ -64,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             window.open(projectLink, "_blank");
                         }}
                     >
-                        <Code2 className="absolute top-6 right-16" />
+                        <Code2 className="top-6 right-16 absolute" />
                     </Link>
                     <Link
                         to={projectGithub}
@@ -72,7 +78,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             window.open(projectGithub, "_blank");
                         }}
                     >
-                        <Github className="absolute top-6 right-7" />
+                        <Github className="top-6 right-7 absolute" />
                     </Link>
                 </div>
             </Tilt>

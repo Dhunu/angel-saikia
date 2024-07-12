@@ -5,8 +5,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 
 const ProjectSection = () => {
     return (
-        <Container className="pt-20 mx-10 md:mx-auto" id="projects">
-            <h1 className="text-center font-extrabold text-3xl md:text-5xl font-serif">
+        <Container className="md:mx-auto pt-20 mx-10" id="projects">
+            <h1 className="md:text-5xl font-serif text-3xl font-extrabold text-center">
                 My Projects
             </h1>
             <Tabs defaultValue="all" className="mt-10">
@@ -15,65 +15,100 @@ const ProjectSection = () => {
                         <TabsTrigger value="all">All</TabsTrigger>
                         <TabsTrigger value="fe">Frontend</TabsTrigger>
                         <TabsTrigger value="be">Backend</TabsTrigger>
-                        {/* <TabsTrigger value="fs">Full Stack</TabsTrigger> */}
                     </TabsList>
                 </div>
                 <TabsContent
                     value="all"
-                    className="flex flex-wrap gap-2 justify-evenly"
+                    className="justify-evenly flex flex-wrap gap-2"
                 >
-                    {projects.map((project) => (
-                         <ProjectCard
-                         projectName={project.title}
-                         projectImage={project.image}
-                         projectLink={project.url}
-                         projectGithub={project.github}
-                         projectTags={project.techStack}
-                     />
-                    ))}
+                    {projects
+                        .sort((a, b) => b.id - a.id)
+                        .filter(
+                            (project) =>
+                                project.scope === projectScope.FullStack
+                        )
+
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
+                    {projects
+                        .sort((a, b) => b.id - a.id)
+                        .filter(
+                            (project) => project.scope === projectScope.FrontEnd
+                        )
+
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
+                    {projects
+                        .sort((a, b) => b.id - a.id)
+                        .filter(
+                            (project) => project.scope === projectScope.BackEnd
+                        )
+
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
                 </TabsContent>
 
-                {/* <TabsContent
-                    value="fs"
-                    className="flex flex-wrap gap-2 justify-evenly"
-                >
-                    {projects.filter(project => project.scope==projectScope.FullStack).map((project) => (
-                         <ProjectCard
-                         projectName={project.title}
-                         projectImage={project.image}
-                         projectLink={project.url}
-                         projectGithub={project.github}
-                         projectTags={project.techStack}
-                     />
-                    ))}
-                </TabsContent> */}
                 <TabsContent
                     value="be"
-                    className="flex flex-wrap gap-2 justify-evenly"
+                    className="justify-evenly flex flex-wrap gap-2"
                 >
-                    {projects.filter(project => project.scope===projectScope.BackEnd).map((project) => (
-                        <ProjectCard
-                            projectName={project.title}
-                            projectImage={project.image}
-                            projectLink={project.url}
-                            projectGithub={project.github}
-                            projectTags={project.techStack}
-                        />
-                    ))}
+                    {projects
+                        .filter(
+                            (project) => project.scope === projectScope.BackEnd
+                        )
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
                 </TabsContent>
                 <TabsContent
                     value="fe"
-                    className="flex flex-wrap gap-2 justify-evenly"
+                    className="justify-evenly flex flex-wrap gap-2"
                 >
-                    {projects.filter(project => project.scope===projectScope.FrontEnd).map((project) => (
-                        <ProjectCard
-                            projectName={project.title}
-                            projectImage={project.image}
-                            projectLink={project.url}
-                            projectGithub={project.github}
-                            projectTags={project.techStack}
-                        />
-                    ))}
+                    {projects
+                        .filter(
+                            (project) => project.scope === projectScope.FrontEnd
+                        )
+                        .map((project) => (
+                            <ProjectCard
+                                key={project.title}
+                                projectName={project.title}
+                                projectImage={project.image}
+                                projectLink={project.url}
+                                projectGithub={project.github}
+                                projectTags={project.techStack}
+                            />
+                        ))}
                 </TabsContent>
             </Tabs>
         </Container>
